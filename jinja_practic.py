@@ -181,3 +181,167 @@
 # msg = tm.render(cities=cities)
 #
 # print(msg)
+
+
+# from jinja2 import Template
+#
+# cars = [
+#     {'model' : 'audi', 'price' : 23000},
+#     {'model' : 'skoda', 'price' : 17300},
+#     {'model' : 'volvo', 'price' : 44300},
+#     {'model' : 'lada', 'price' : 11000},
+# ]
+#
+# my_str = "Суммарная стоимость всех автомобилей {{ cs | sum(attribute='price') }}"
+# tm = Template(my_str)
+# msg = tm.render(cs = cars)
+#
+# print(msg)
+
+
+# from jinja2 import Template
+#
+# digs = [1, 2, 3, 4, 5, 6]
+#
+# my_str = "Сумма чисел списка {{ dg | sum }}"
+# tm = Template(my_str)
+# msg = tm.render(dg = digs)
+#
+# print(msg)
+
+
+# from jinja2 import Template
+#
+# cars = [
+#     {'model' : 'audi', 'price' : 23000},
+#     {'model' : 'skoda', 'price' : 17300},
+#     {'model' : 'volvo', 'price' : 44300},
+#     {'model' : 'lada', 'price' : 11000},
+# ]
+#
+# my_str = "Самый дорогой автомобиль {{ cs | max(attribute='price') }}"
+# tm = Template(my_str)
+# msg = tm.render(cs = cars)
+#
+# print(msg)
+
+
+
+# from jinja2 import Template
+#
+# cars = [
+#     {'model' : 'audi', 'price' : 23000},
+#     {'model' : 'skoda', 'price' : 17300},
+#     {'model' : 'volvo', 'price' : 44300},
+#     {'model' : 'lada', 'price' : 11000},
+# ]
+#
+# my_str = "Самый дорогой автомобиль {{ (cs | max(attribute='price')).model }}"
+# tm = Template(my_str)
+# msg = tm.render(cs = cars)
+#
+# print(msg)
+
+
+# from jinja2 import Template
+#
+# cars = [
+#     {'model' : 'audi', 'price' : 23000},
+#     {'model' : 'skoda', 'price' : 17300},
+#     {'model' : 'volvo', 'price' : 44300},
+#     {'model' : 'lada', 'price' : 11000},
+# ]
+#
+# my_str = "Самый дорогой автомобиль {{ cs | random }}"
+# tm = Template(my_str)
+# msg = tm.render(cs = cars)
+#
+# print(msg)
+
+
+# from jinja2 import Template
+#
+# cars = [
+#     {'model' : 'audi', 'price' : 23000},
+#     {'model' : 'skoda', 'price' : 17300},
+#     {'model' : 'volvo', 'price' : 44300},
+#     {'model' : 'lada', 'price' : 11000},
+# ]
+#
+# my_str = "Самый дорогой автомобиль {{ cs | replace('a', 'A') }}"
+# tm = Template(my_str)
+# msg = tm.render(cs = cars)
+#
+# print(msg)
+
+
+#
+# from jinja2 import Template
+#
+# persons = [
+#     {'name' : 'Alexandr', 'old' : 18, 'weight' : 78.5},
+#     {'name' : 'Vlad', 'old' : 38, 'weight' : 88.5},
+#     {'name' : 'Oleg', 'old' : 37, 'weight' : 50.5},
+#     {'name' : 'Ivan', 'old' : 23, 'weight' : 94.0}
+# ]
+#
+# my_str = """
+# {%- for u in users -%}
+# {% filter upper %}{{ u.name }}{% endfilter %}
+# {% endfor -%}
+# """
+# tm = Template(my_str)
+# msg = tm.render(users = persons)
+#
+# print(msg)
+
+
+
+# from jinja2 import Template
+#
+# html = """
+# {% macro input(name, value='', type='text', size=20) -%}
+# <input type="{{ type }}" name="{{ name }} value="{{ value | e }}" size="{{ size }}">
+# {%- endmacro %}
+#
+# <p>{{ input('username') }}
+# <p>{{ input('email') }}
+# <p>{{ input('password') }}
+# """
+#
+# tm = Template(html)
+# msg = tm.render()
+#
+# print(msg)
+
+#
+# from jinja2 import Template
+#
+# persons = [
+#     {'name' : 'Alexandr', 'old' : 18, 'weight' : 78.5},
+#     {'name' : 'Vlad', 'old' : 38, 'weight' : 88.5},
+#     {'name' : 'Oleg', 'old' : 37, 'weight' : 50.5},
+#     {'name' : 'Ivan', 'old' : 23, 'weight' : 94.0}
+# ]
+#
+# html2 = """
+# {% macro list_users(list_of_user) -%}
+# <ul>
+# {% for u in list_of_user -%}
+#     <li>{{ u.name }} {{ caller(u) }}
+# {%- endfor %}
+# </ul>
+# {%- endmacro %}
+#
+# {% call(user) list_users(users) %}
+#     <ul>
+#     <li>age: {{ user.old }}
+#     <li>weight: {{ user.weight }}
+#     </ul>
+# {% endcall -%}
+# """
+#
+# tm = Template(html2)
+# msg = tm.render(users=persons)
+#
+# print(msg)
