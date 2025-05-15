@@ -5,6 +5,7 @@
 # msg = tm.render(name=name)
 #
 # print(msg)
+from operator import index
 
 #
 # from jinja2 import Template
@@ -343,5 +344,49 @@
 #
 # tm = Template(html2)
 # msg = tm.render(users=persons)
+#
+# print(msg)
+
+
+
+# from jinja2 import Environment, FileSystemLoader
+#
+# persons = [
+#     {'name' : 'Alexandr', 'old' : 18, 'weight' : 78.5},
+#     {'name' : 'Vlad', 'old' : 38, 'weight' : 88.5},
+#     {'name' : 'Oleg', 'old' : 37, 'weight' : 50.5},
+#     {'name' : 'Ivan', 'old' : 23, 'weight' : 94.0}
+# ]
+#
+#
+# file_loader = FileSystemLoader('templates')
+# env = Environment(loader=file_loader)
+#
+# tm = env.get_template('main.html')
+# msg = tm.render(users = persons)
+#
+# print(msg)
+#
+#
+# from jinja2 import Environment, FunctionLoader
+#
+# persons = [
+#     {'name' : 'Alexandr', 'old' : 18, 'weight' : 78.5},
+#     {'name' : 'Vlad', 'old' : 38, 'weight' : 88.5},
+#     {'name' : 'Oleg', 'old' : 37, 'weight' : 50.5},
+#     {'name' : 'Ivan', 'old' : 23, 'weight' : 94.0}
+# ]
+#
+# def load_tpl(path):
+#     if path == "index":
+#         return """Имя {{ u.name }}, возраст {{ u.old }}"""
+#     else:
+#         return """Данные: {{ u }}"""
+#
+# file_loader = FunctionLoader(load_tpl)
+# env = Environment(loader=file_loader)
+#
+# tm = env.get_template('index')
+# msg = tm.render(u = persons[0])
 #
 # print(msg)
