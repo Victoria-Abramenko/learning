@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Macros</title>
+</head>
+<body>
+    {% macro dialog(title, msg='') -%}
+    <div class="dialog">
+        <p class="title">{{ title }}</p>
+        <p class="msg">{{ msg }}</p>
+    </div>
+    {%- endmacro %}
+</body>
+</html>

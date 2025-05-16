@@ -1,0 +1,18 @@
+<!--    {%import 'macros.html' as mcrs %}-->
+    {%from 'macros.html' import dialog as dlg %}
+    {% include 'part_1.html' %}
+    <div class="content">
+        <h2 class="header_text header_height" >ОТЗЫВЫ НАШИХ ПОКУПАТЕЛЕЙ</h2>
+        <div class="reviews_box">
+            <a href="img/reviews1.jpg" class="reviews_link"><div class="reviews"><img class="reviews_img" src="img/reviews1.jpg" alt="Отзыв покупателя искуственного ротанга"></div></a>
+            <a href="img/reviews2.jpg" class="reviews_link"><div class="reviews"><img class="reviews_img" src="img/reviews2.jpg" alt="Отзыв покупателя"></div></a>
+            <a href="img/reviews3.jpg" class="reviews_link"><div class="reviews"><img class="reviews_img" src="img/reviews3.jpg" alt="Отзыв покупателя"></div></a>
+            <a href="img/reviews4.jpg" class="reviews_link"><div class="reviews"><img class="reviews_img" src="img/reviews4.jpg" alt="Отзыв покупателя"></div></a>
+        </div>
+    </div>
+<!--    {{ mcrs.dialog('Заголовок', 'Текст сообщения') }}-->
+    {{ dlg('Заголовок', 'Текст сообщения') }}
+    {% include 'part_3.html' %}
+
+<!--     {% include 'no_file.html' ignore missing %}-->
+<!--     {% include ['part_1.html', 'part_3.html'] ignore missing %}-->

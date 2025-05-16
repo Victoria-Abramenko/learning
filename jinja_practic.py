@@ -390,3 +390,27 @@ from operator import index
 # msg = tm.render(u = persons[0])
 #
 # print(msg)
+
+
+# from jinja2 import Environment, FileSystemLoader
+#
+#
+# file_loader = FileSystemLoader('templates')
+# env = Environment(loader=file_loader)
+#
+# tm = env.get_template('part_2.html')
+# msg = tm.render()
+#
+# print(msg)
+
+#
+# from jinja2 import Environment, FileSystemLoader
+#
+#
+# file_loader = FileSystemLoader('templates')
+# env = Environment(loader=file_loader)
+#
+# tm = env.get_template('part_2.html')
+# msg = tm.render(domain = 'web_site.ru', title = "jinja include")
+#
+# print(msg)
