@@ -414,3 +414,27 @@ from operator import index
 # msg = tm.render(domain = 'web_site.ru', title = "jinja include")
 #
 # print(msg)
+
+
+# from jinja2 import Environment, FileSystemLoader
+#
+# file_loader = FileSystemLoader('templates')
+# env = Environment(loader=file_loader)
+#
+# tm = env.get_template('about_ex.html')
+# output = tm.render()
+#
+# print(output)
+
+#
+# from jinja2 import Environment, FileSystemLoader
+#
+# subs = ["математика", "информатика", "логика", "проектирование"]
+#
+# file_loader = FileSystemLoader('templates')
+# env = Environment(loader=file_loader)
+#
+# tm = env.get_template('about_ex.html')
+# output = tm.render(list_table = subs)
+#
+# print(output)
